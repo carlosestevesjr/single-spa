@@ -29,14 +29,21 @@
       "imports": {
         "@ce/root-config": "//localhost:9000/ce-root-config.js",
         "@ce/resume-me": "//localhost:8100/ce-resume-me.js",
-        "@ce/pokedex": "//localhost:8200/ce-pokedex.js",
-        "@ce/react-single": "//localhost:8500/ce-react-single.js",
-        "@ce/react-multiples": "//localhost:8600/ce-react-multiples.js"
+        "@ce/pokedex": "//localhost:8200/ce-pokedex.js"
       }
     }
   </script>
+  <% } else { %>
+    <script type="systemjs-importmap">
+        {
+          "imports": {
+            "@ce/root-config": "//localhost:9000/ce-root-config.js",
+            "@ce/resume-me": "//localhost:8100/ce-resume-me.js",
+            "@ce/pokedex": "https://ce-pokedex.netlify.app"
+          }
+        }
+      </script>
   <% } %>
-
   
   <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
   <% if (isLocal) { %>
